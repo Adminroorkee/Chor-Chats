@@ -84,9 +84,10 @@ main{
     padding: 1rem;
     background-color: #2227B2;
     color: #FFFFFF;
-    display: inline-block;
+    display: block;
     border-radius: 5px;
-    max-width: 55vw;
+    max-width: 37vw;
+    overflow-wrap: break-word;
 }
 .left-chat{
     margin-right: auto;
@@ -112,6 +113,7 @@ main{
    border: none;
    outline: none;
    resize: none;
+   white-space: pre-wrap;
 }
 .message-input form textarea::-webkit-scrollbar{
     display: none;
