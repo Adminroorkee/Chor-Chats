@@ -1,7 +1,8 @@
 const socket = io();
 let name;
 let textarea = document.querySelector(".message-input form textarea");
-let chatContainer = document.querySelector(".chat-container")
+let chatContainer = document.querySelector(".chat-container");
+let sendbtn = document.querySelector(".message-input form button");
 do {
     name = prompt("Enter your name:")
 } while (!name);
@@ -12,6 +13,12 @@ textarea.addEventListener("keyup",(e)=>{
    }
 });
 
+sendbtn.addEventListener("click",(e)=>{
+   e.preventDefault();
+   sendMessage(textarea.value);
+ });
+
+ 
 function sendMessage(message){
     let msg={
         user:name,
