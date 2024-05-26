@@ -151,4 +151,8 @@ main{
     .logo img{
         width: 55%;
     }
+    /* .message-input form textarea:focus{
+        position: fixed;
+        top:50px;
+    } */
   }

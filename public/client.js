@@ -16,10 +16,13 @@ textarea.addEventListener("keyup",(e)=>{
 sendbtn.addEventListener("click",(e)=>{
    e.preventDefault();
    sendMessage(textarea.value);
+  
  });
 
  
 function sendMessage(message){
+   textarea.value="";
+
     let msg={
         user:name,
         message:message.trim()
@@ -30,7 +33,6 @@ function sendMessage(message){
 }
 
 function appendMessage(msg,type){
-    textarea.value="";
     let mainDiv = document.createElement("div");
     let className = type
     mainDiv.classList.add(className,"chat-box");
