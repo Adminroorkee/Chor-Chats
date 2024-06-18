@@ -9,20 +9,22 @@ do {
 
 textarea.addEventListener("keyup",(e)=>{
    if(e.key==="Enter"){
+    if (e.target.value.trim()!==""){
     sendMessage(e.target.value);
-   }
+    }}
 });
 
 sendbtn.addEventListener("click",(e)=>{
    e.preventDefault();
+   if (textarea.value!==""){
    sendMessage(textarea.value);
-  
+   }
  });
 
  
 function sendMessage(message){
    textarea.value="";
-
+    
     let msg={
         user:name,
         message:message.trim()
@@ -47,9 +49,14 @@ function appendMessage(msg,type){
 }
 
 // receive msgg 
+function playmusic(){
+let beat = new Audio('/happy-pop-2-185287.mp3');
+beat.play();
 
+}
 
 socket.on("message",(msg)=>{
+    playmusic();
     appendMessage(msg,"left-chat");
 })
 
