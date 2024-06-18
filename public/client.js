@@ -4,7 +4,8 @@ let textarea = document.querySelector(".message-input form textarea");
 let chatContainer = document.querySelector(".chat-container");
 let sendbtn = document.querySelector(".message-input form button");
 do {
-    name = prompt("Enter your name:")
+   let text = prompt("Enter your name:");
+   name = text[0].toUpperCase()+text.slice(1)
 } while (!name);
 
 textarea.addEventListener("keyup",(e)=>{
@@ -31,6 +32,7 @@ function sendMessage(message){
     }
 
     appendMessage(msg,'right-chat');
+
     socket.emit("message",msg)
 }
 
